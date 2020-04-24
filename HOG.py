@@ -44,8 +44,7 @@ def getHOGfeat(image, stride = 8, orientations = 8, pixels_per_cell = (8, 8), ce
             grad[i, j, 0] = (grad[i, j, 0] + 360) % 360
             grad[i, j, 1] = np.sqrt(gy[i, j] ** 2 + gx[i, j] ** 2)
     
-    # 将梯度矩阵标准化
-    # 待调整！！
+    #得到直方图
     normalised_blocks = np.zeros((n_blocksx, n_blocksy, bx * by * orientations))
     for y in range(n_blocksy):
         for x in range(n_blocksx):
